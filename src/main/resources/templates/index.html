@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Art List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .card-columns {
+            column-count: 3; /* Adjust the number of columns as needed */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Art List</h2> 
+
+<div align="left">
+    <h3><a th:href="@{/ajouter}">Ajouter Art</a></h3>
+</div>
+
+<div class="container">
+    <div class="card-columns">       
+        <div th:each="art : ${listeart}" class="card">
+            <img th:src="${art.data}" class="card-img-top" alt="Art Image">
+                 
+
+            <div class="card-body">
+                <h5 class="card-title" th:text="${art.nom}">Art nom</h5>
+                <p class="card-text">
+                    <strong>Art prix:</strong> <span th:text="${art.prix}">Art prix</span>
+                </p>
+                <p class="card-text">
+                    <strong>Client:</strong> <span th:text="${art.client.nom}">Client nom</span>
+                </p>  
+                <a th:href="@{'/editArt/' + ${art.id}}" class="btn btn-primary">Modify</a>
+                <a th:href="@{'/deleteArt/' + ${art.id}}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>         
+    </div>
+</div>
+
+</body>
+</html>

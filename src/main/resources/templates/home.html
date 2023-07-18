@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Art Website</title>
+	<link rel="stylesheet" href="../static/style.css">
+	<style>/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container { 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;  
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Main styles */
+main {
+  text-align: center;
+  padding: 50px 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #ffa500;    
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>   
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a th:href="@{/login}">Log In </a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>   
+		</nav>
+	</header>
+	
+	<main>       
+		<h1>Welcome to Art Website</h1>
+		<p>Discover the world of art, from paintings to sculptures.</p>
+		<a href="#" class="button">Explore now</a>
+	
+	<article style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_natural_color.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_natural_color.jpg"    alt="Mona Lisa" style="display: block; max-width: 100%; height: 400px; margin-bottom: 10px;">
+	<p> Mona Lisa, also called Portrait of Lisa Gherardini, wife of Francesco del Giocondo, Italian La Gioconda, or French La Joconde, oil painting on a poplar wood panel by Leonardo da Vinci, probably the world’s most famous painting. It was painted sometime between 1503 and 1519, when Leonardo was living in Florence, and it now hangs in the Louvre Museum, Paris, where it remained an object of pilgrimage in the 21st century. The sitter’s mysterious smile and her unproven identity have made the painting a source of ongoing investigation and fascination.</p>
+	</article></main>    
+	<footer>   
+		<p>&copy; Art Website 2023</p>
+	</footer>         
+</body>
+</html>
